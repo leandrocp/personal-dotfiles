@@ -1,0 +1,8 @@
+[Gedit Plugin]
+Loader=python
+Module=gedbp
+IAge=2
+Name=GeDBp
+Description=A python GDBp support
+Authors=Viktor Semykin <thesame.ml@gmail.com>
+

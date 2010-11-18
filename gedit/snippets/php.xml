@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="php">
+  <snippet>
+    <text><![CDATA[<?php $0 ?>]]></text>
+    <tag>ph</tag>
+    <description>&lt;?php ?&gt;</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[class ${1:ClassName} ${2:extends AnotherClass}
+{
+	$0
+}
+]]></text>
+    <tag>clas</tag>
+    <description>clas</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<?php echo $0 ?>]]></text>
+    <tag>pe</tag>
+    <description>&lt;?php echo .. ?&gt;</description>
+  </snippet>
+  <snippet override="php-if">
+    <text><![CDATA[if (${1:condition}) {
+	$0
+}]]></text>
+    <tag>if</tag>
+    <description>if ..</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[array($0)]]></text>
+    <tag>ar</tag>
+    <description>array()</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[$this->$0]]></text>
+    <tag>th</tag>
+    <description>$this-&gt;</description>
+  </snippet>
+  <snippet override="php-else">
+    <text><![CDATA[else {
+	$0
+}]]></text>
+    <tag>else</tag>
+    <description>else ..</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[->$0]]></text>
+    <tag>-</tag>
+    <description>-&gt;</description>
+  </snippet>
+  <snippet override="php-function">
+    <text><![CDATA[function ${1:FunctionName}($2) {
+	${0}
+}]]></text>
+    <tag>func</tag>
+    <description>function ..</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[<pre>
+	<?php print_r($0); ?>
+</pre>]]></text>
+    <tag>pp</tag>
+    <description>pp</description>
+  </snippet>
+  <snippet override="php-foreach">
+    <text><![CDATA[foreach ($${1:variable} as $${2:value}) {
+	$0
+}]]></text>
+    <tag>foreach</tag>
+    <description>foreach ..</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[$this->texto("$0");]]></text>
+    <tag>tx</tag>
+    <description>$this-&gt;texto("$0");</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[$this->textol("$0");]]></text>
+    <tag>txl</tag>
+    <description>$this-&gt;textol("$0");</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[$this->set('$1', $2);]]></text>
+    <tag>set</tag>
+    <description>set</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[/**
+ * $0
+ */]]></text>
+    <tag>doc</tag>
+    <description>**</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[__('$1', true)]]></text>
+    <tag>_</tag>
+    <description>__</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[var $${1:name} = $0]]></text>
+    <tag>var</tag>
+    <description>var</description>
+  </snippet>
+</snippets>

@@ -1,0 +1,24 @@
+function p { cd ~/Projetos/$1; }
+function d { cd ~/Downloads/$1; }
+
+alias reload='. ~/.bash_profile'
+
+alias h='cd ~'
+alias ~='cd ~'
+alias ..='cd ..'
+alias ...='cd .. ; cd ..'
+
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias lla='ls -lha'
+alias rm='rm -i'
+alias su='su -'
+alias grep='grep --color=auto'
+
+alias v='vim'
+alias g='git'
+alias s='sudo'
+alias rb='ruby'
+alias rdb='rdebug'
+alias r='rails'
+alias rk='rake'

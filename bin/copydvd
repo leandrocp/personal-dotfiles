@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Leandro Cesquini Pereira
+
+output_dir="/mnt/rip"
+dvd=`cat /etc/mtab | grep sr0 | awk '{print $2}' | awk -F/ '{print $3}'`
+output_dir_dvd="${output_dir}/${dvd}"
+
+echo "Copiando $dvd!"
+notify-send -i /usr/share/icons/Humanity/devices/48/gnome-dev-disc-dvdrom.svg \
+  "copydvd" \
+  "Copiando $dvd!"
+
+mountpoint $output_dir > /dev/null
+if [ ! $? -eq 0 ] ; then
+  mount $output_dir
+fi
+
+if [ ! -d "$output_dir_dvd" ] ; then
+  mkdir -p $output_dir_dvd
+else
+  if [ "$(ls -A $output_dir_dvd)" ] ; then
+    echo "Diretório $output_dir_dvd já existe, e não está vazio!"
+    echo "Saindo..."
+    notify-send -i /usr/share/icons/Humanity/devices/48/gnome-dev-disc-dvdrom.svg \
+      "copydvd" \
+      "Diretório $output_dir_dvd já existe, e não está vazio!"
+    exit
+  fi  
+fi
+
+echo "Destino -> $output_dir_dvd"
+
+cmd="dvdcpy -m -o $output_dir_dvd /dev/sr0"
+echo "Comando -> $cmd"
+$cmd
+
+notify-send -i /usr/share/icons/Humanity/devices/48/gnome-dev-disc-dvdrom.svg \
+  "copydvd" \
+  "Cópia do dvd $dvd terminou."
