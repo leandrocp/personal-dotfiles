@@ -8,4 +8,6 @@ Instalação:
 
 sudo apt-get install git-core ruby rake gedit
 
+cd ~ ; git clone git@github.com:leandrocp/dotfiles.git .dotfiles ; cd ~/.dotfiles
+
 rake install:all
