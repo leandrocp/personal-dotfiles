@@ -6,7 +6,7 @@ task :default => 'install:all'
 namespace :install do
 
   desc "install and configure everything"
-  task :all => [:dotfiles, :gedit] do
+  task :all => [:dotfiles, :rvm, :gedit] do
     puts "Happy coding!"
   end
 
@@ -41,6 +41,19 @@ namespace :install do
     end
   end
 
+  desc "install and configure rvm, the Ruby Version Manager"
+  task :rvm do
+    puts "Installing rvm and dependencies"
+    system %Q{sudo apt-get install curl git-core patch}
+    system %Q{su -c "bash < <( curl -L http://bit.ly/rvm-install-system-wide )"}
+    puts "Adding user to the group 'rvm'"
+    system %Q{sudo usermod -a -G rvm $USER}
+    puts "Reloading rvm"
+    system %Q{rvm reload}
+    puts `type rvm | head -n1`
+    puts 'Done installing rvm'
+  end
+
   desc "install and configure gedit"
   task :gedit do
     if File.directory?(File.join(ENV['HOME'], "/.gnome2"))
@@ -70,7 +83,6 @@ namespace :install do
       link_bin(file)
     end
   end
-
 end
 
 def replace_file(file)

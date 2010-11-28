@@ -1,5 +1,4 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+if [[ -n "$PS1" ]] ; then
 
 # don't put duplicate lines in the history.
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
@@ -74,4 +73,6 @@ fi
 # RVM - Ruby Version Manager
  if [ -f /usr/local/lib/rvm ]; then
   . /usr/local/lib/rvm
+fi
+
 fi
