@@ -1,1 +1,11 @@
-Um simples dotfiles que contém configurações de bash, git, gedit, vim, sqlite e uns outros detalhes.
+* bash
+* rvm
+* sqlite
+* git
+* gedit
+
+Instalação:
+
+sudo apt-get install git-core ruby rake gedit
+
+rake install:all
