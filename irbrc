@@ -2,22 +2,18 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 
-%w[rubygems looksee/shortcuts wirble hirb ap].each do |gem|
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+
+%w[rubygems looksee/shortcuts wirble].each do |gem|
   begin
     require gem
   rescue LoadError
+    puts "unable to load gem #{gem}"
   end
 end
-
-Wirble.init
-Wirble.colorize
-
-Hirb::View.enable
-
-IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:SAVE_HISTORY] = 1000
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
-IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 class Object
   # list methods which aren't in superclass
@@ -36,7 +32,7 @@ class Object
       klass = self.kind_of?(Class) ? name : self.class.name
       method = [klass, method].compact.join('#')
     end
-    puts `ri '#{method}'`
+    system 'ri', method.to_s
   end
 end
 
@@ -56,4 +52,4 @@ def paste
   `pbpaste`
 end
 
-load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
+load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)

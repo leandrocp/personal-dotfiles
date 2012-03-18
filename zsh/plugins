@@ -1,0 +1,1 @@
+plugins=(rails3 git textmate ruby archlinux brew bundler cap github heroku osx python rake rbenv ssh-agent)

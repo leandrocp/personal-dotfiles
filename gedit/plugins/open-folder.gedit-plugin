@@ -1,8 +1,0 @@
-[Gedit Plugin]
-Loader=python
-Module=open-folder
-IAge=2
-Name=Open Folder
-Description=Open the folder containing the current document
-Authors=Kevin McGuinness <kevin.mcguinness@gmail.com>
-Copyright=Copyright © 2008 Kevin McGuinness

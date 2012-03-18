@@ -1,1 +1,5 @@
-*.pyc
+vim/.netrwhist
+vim/.VimballRecord
+rbenv/shims
+rbenv/versions
+rbenv/version

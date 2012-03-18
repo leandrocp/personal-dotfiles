@@ -1,0 +1,15 @@
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -lah"
+alias la='ls -A'
+
+# editor
+alias e="$EDITOR"
+
+# git
+alias g='git'
