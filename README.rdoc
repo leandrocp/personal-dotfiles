@@ -1,19 +1,19 @@
 = leandrocp dotfiles
 
 * bash
-* rvm
+* zsh
 * sqlite
 * git
-* gedit
+* rbenv
 
-  based on:
-    https://github.com/ryanb/dotfiles
-    https://github.com/carlosantoniodasilva/dotfiles
-    https://wiki.archlinux.org/index.php/Zsh
+based on:
+  https://github.com/ryanb/dotfiles
+  https://github.com/carlosantoniodasilva/dotfiles
+  https://wiki.archlinux.org/index.php/Zsh
 
 = Installation
 
-  sudo apt-get install git-core ruby rake gedit
+  sudo apt-get install git-core ruby rake
   git clone git@github.com:leandrocp/dotfiles.git .dotfiles
   cd ~/.dotfiles
   rake install
