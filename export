@@ -4,4 +4,8 @@ eval "$(rbenv init -)"
 
 export PATH="$HOME/.bin:./.bundle/bin:$HOME/.rbenv/bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
-
+export GREP_OPTIONS="--color=auto"
+export GREP_COLOR="4;33"
+export CLICOLOR="auto"
+export GIT_SSL_NO_VERIFY="true"
+export SSL_CERT_FILE="$HOME/.ssh/cacert.pem"
