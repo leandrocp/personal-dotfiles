@@ -17,7 +17,7 @@
 = Installation
 
   sudo apt-get install git-core ruby rake
-  git clone git@github.com:leandrocp/dotfiles.git .dotfiles
+  git clone --recursive git@github.com:leandrocp/dotfiles.git .dotfiles
   cd ~/.dotfiles
   rake install
 
